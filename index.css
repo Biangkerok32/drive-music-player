@@ -1,0 +1,272 @@
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --bg: white;
+  --text: black;
+  --invert: 0;
+  --list-bg: rgb(200, 200, 200);
+  --modal-bg: white;
+  --modal-shadow: 6px 6px 20px rgb(50, 50, 50), 5px -5px 20px rgb(50, 50, 50), -5px 5px 20px rgb(50, 50, 50), -5px -5px 20px rgb(50, 50, 50);
+  --hover-color: gray;
+  --hover-filter: 0.9;
+}
+
+.dark {
+  --bg: black;
+  --text: rgb(173, 173, 173);
+  --invert: 100%;
+  --list-bg: rgb(40, 40, 40);
+  --modal-bg: rgb(30, 30, 30);
+  --modal-shadow: 6px 6px 10px black 5px -5px 8px black -5px 5px 8px black -5px -5px 8px black;
+  --hover-color: rgb(50, 50, 50);
+  --hover-filter: 1.4;
+}
+
+body {
+  color: var(--text);
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  background: #b70909f5;
+  cursor: pointer;
+  border: none;
+  font-size: 1em;
+  margin-top: 8px;
+  margin-bottom: 0;
+  padding: 6px 8px;
+  color: white;
+  border-radius: 2px;
+}
+
+audio {
+  width: 40vw;
+  position: absolute;
+  right: 0;
+}
+
+input {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--list-bg);
+  padding: 4px;
+  border-radius: 3px;
+}
+
+#center {
+  justify-items: center;
+  width: 8vmax;
+  height: 8vmax;
+  margin: auto;
+  top: calc(50vh - 2vmax);
+  position: relative;
+}
+
+#centerSong {
+  width: 100vw;
+  left: 0;
+  text-align: center;
+  align-content: center;
+  position: absolute;
+  bottom: 15vh;
+}
+
+#trackTime {
+  width: 40vw;
+  height: 7px;
+  background: gray;
+  position: absolute;
+  border-radius: 3.5px;
+  left: 30vw;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#timeIndicate {
+  width: 10px;
+  height: 7px;
+  background: black;
+  border-radius: 3.5px;
+  position: absolute;
+  display: inline-block;
+  margin: 0;
+  left: -7px;
+}
+
+#timeIndicate:hover {
+  height: 13px;
+  top: -3px;
+}
+
+#doneGone {
+  position: absolute;
+  left: 0;
+  height: 7px;
+  background: #b70909;
+  width: 0;
+  margin: 0;
+  display: inline-block;
+  border-radius: 3.5px;
+}
+
+#adjustAudio {
+  width: 25vw;
+  height: 7px;
+  background: gray;
+  position: absolute;
+  border-radius: 3.5px;
+  left: 40vw;
+  top: 120px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#showAudioLevel {
+  position: absolute;
+  left: 0;
+  height: 7px;
+  background: black;
+  width: 100%;
+  margin: 0;
+  display: inline-block;
+  border-radius: 3.5px;
+  filter: invert(var(--invert));
+}
+
+#audioSlider {
+  width: 10px;
+  height: 7px;
+  background: rgb(80, 80, 80);
+  border-radius: 3.5px;
+  position: absolute;
+  left: calc(100% - 7px);
+  display: inline-block;
+  margin: 0;
+  /* left: -7px; */
+}
+
+#audioSlider:hover {
+  height: 10px;
+  top: -1.5px;
+  border-radius: 50%;
+}
+
+.playpause {
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  filter: invert(var(--invert));
+  outline: none;
+}
+
+#buttons {
+  position: absolute;
+  bottom: 1vmin;
+  left: 1vmin;
+  font-size: 1.2em;
+  width: calc(100vw - 1vmin);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 3px;
+}
+
+li {
+  cursor: pointer;
+  padding: 4px;
+  background: var(--bg);
+}
+
+li:hover {
+  filter: brightness(var(--hover-filter));
+}
+
+.li:nth-child(even) {
+  background: var(--list-bg);
+}
+
+.artist {
+  font-style: italic;
+  display: block;
+}
+
+#songsList {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-height: 60vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 1;
+}
+
+#songsList li {
+  padding-left: 6px;
+}
+
+#songsbtn {
+  display: none;
+  /* width: 90vw;
+  left: 5vw;
+  position: absolute;
+  top: 5vw; */
+}
+
+#clearall {
+  position: absolute;
+  right: 1vmin;
+}
+
+@media screen and (max-width: 520px) {
+  #centersong {bottom: 20vh;}
+  #trackTime {width: 80vw; left: 10vw;}
+  #timeIndicate { 
+    height: 13px;
+    top: -3px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  #songsList {
+    display: none;
+    width: 98vw;
+    max-height: 80vh;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #songsbtn {
+    display: initial;
+  }
+}
+
+.none {
+  display: none;
+}
+
+.inlineBlock {
+  display: inline-block;
+}
+
+.initial {
+  display: initial;
+}
+
+.reverse {
+  color: gray;
+  background: black;
+}
+
+.invert {
+  filter: invert(var(--invert));
+}

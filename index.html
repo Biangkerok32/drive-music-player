@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A simple online music player.">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <title>Musicorae</title>
+    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="620x620" href="apple-touch-icon.png">
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css">
+    <script src="index.js" type="text/javascript" defer></script>
+  </head>
+  <body>
+    <audio id="currentAudio"></audio>
+    <div id="center">
+      <button id="playPause" class="playpause" title="Play/pause songs">
+        <img src="play.png" id="play" style="width: 100%; height: 100%;" alt="Play button">
+        <img src="pause.png" id="pause" class="none" style="width: 100%; height: 100%;" alt="Pause button">
+      </button>
+    </div>
+
+    <div id="seeSongs">
+      <ul id="songsList">
+      </ul>
+    </div>
+
+    <div id="centerSong">
+      <h2 id="seeSong"></h2>
+
+      <div id="showTime">
+        <div id="trackTime">
+          <div id="doneGone">
+            <div id="timeIndicate"></div>
+          </div>
+          <p id="seeTime"></p>
+        </div>
+      </div>
+
+      <div id="adjustAudio">
+        <div id="showAudioLevel">
+          <div id="audioSlider"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="shadow" class="none"></div>
+
+    <div id="buttons">
+      <button id="modebtn">Mode</button>
+      <button id="songsbtn">Songs</button>
+      <button id="clearall">Clear</button>
+    </div>
+  </body>
+</html>
